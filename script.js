@@ -11,14 +11,14 @@ window.addEventListener(`load`, () => {
         if (typeof window.ethereum !== `undefined`) {
             try {
                 const currentAccounts = await window.ethereum.request({ method: `eth_requestAccounts`, });
-                $(`status`).innerText = currentAccounts[0];
+                $(`wallet`).innerText = currentAccounts[0];
             } catch (e) {
                 alert(`Something went wrong with eth_requestAccounts.`);
-                $(`status`).innerText = `Not Connected.`;
+                $(`wallet`).innerText = `Not Connected.`;
             }
         } else {
             alert(`window.ethereum is undefined.`);
-            $(`status`).innerText = `Not Connected.`;
+            $(`wallet`).innerText = `Not Connected.`;
         }
     });
 
